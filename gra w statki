@@ -9,7 +9,7 @@ from random import randint # przywolanie modulu do generowania losowych liczb
 plansza = []
 
 for _ in range(5):     # funkcja ta tworzy nasza tablice gdzie z range(0 ,1, 2, 3, 4, 5)
-    plansza.append(["0"]* 5) # birzzemy tylko pozycje 0 i zwiekszamy ja o 5 razy
+    plansza.append(["0"]* 5) # birzemy tylko pozycje 0 i zwiekszamy ja o 5 razy
                              # tworzy nam sie lista dluga a dokladnie 5X ['0', '0', '0', '0', '0']
 # ta funkcja ponizej ma nam wyswietlin nasza wczesniej wyzej strorzona liste nie w jednym ciagu
 def wydruk_planszy(plansza):   # tylko w kolejnych wierszach 
