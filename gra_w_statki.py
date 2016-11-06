@@ -56,7 +56,9 @@ while tura < 4:
             print("Błąd, to nie jest liczba \n")
             print("podaj jeszcze raz dwie liczby\n")
             continue
-        if int(pozycja_x) and int(pozycja_y) >= 0 :
+        if int(pozycja_y) > 0 or int(pozycja_y) == 0:
+            break
+        if int(pozycja_x) > 0 or int(pozycja_x) == 0:
             break
     
 
