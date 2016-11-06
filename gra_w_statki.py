@@ -8,8 +8,8 @@ from random import randint # przywolanie modulu do generowania losowych liczb
 
 plansza = []
 
-for _ in range(5):     # funkcja ta tworzy nasza tablice gdzie z range(0 ,1, 2, 3, 4, 5)
-    plansza.append(["0"]* 5) # birzemy tylko pozycje 0 i zwiekszamy ja o 5 razy
+for _ in range(5):     # funkcja ta tworzy nasza tablice gdzie z range(0 ,1, 2, 3, 4, )
+    plansza.append(["0"]* 5) # birzzemy tylko pozycje 0 i zwiekszamy ja o 5 razy
                              # tworzy nam sie lista dluga a dokladnie 5X ['0', '0', '0', '0', '0']
 # ta funkcja ponizej ma nam wyswietlin nasza wczesniej wyzej strorzona liste nie w jednym ciagu
 def wydruk_planszy(plansza):   # tylko w kolejnych wierszach 
@@ -22,7 +22,7 @@ def wydruk_planszy(plansza):   # tylko w kolejnych wierszach
 # aby nasza plansza ladniej wygladala usuwamy "" pozostawiajac tylko same O
 def wydruk_planszy_czyszczenie(plansza):
     for linia in plansza:
-        print(" ".join(linia))
+        print(" ".join(linia)) 
 wydruk_planszy_czyszczenie(plansza)
 
 # kojene dwie funkcje to beda nasze zmienne pionowa i pozioma , (statek_linia_ponioma oraz statek_linia_pionowa)
@@ -42,9 +42,26 @@ statek_pozycja_y = linia_pionowa(plansza)  # (col)
 # calosc umieszczamy w petli ktora konczy sie wraz z czterema probami
 tura = 0
 while tura < 4:
-    pozycja_x = int(input("podaj pozycje x :"))
-    pozycja_y = int(input("podaj pozycje y :"))
+    pozycja_x = int()
+    pozycja_y = int()
+    while pozycja_x != -1:
+        try:
+            pozycja_x = int(input("podaj pozycje x :"))
+        except(ValueError, NameError):
+            print("Błąd, to nie jest liczba \n")
+            continue
+        try:
+            pozycja_y = int(input("podaj pozycje y :"))
+        except(ValueError, NameError):
+            print("Błąd, to nie jest liczba \n")
+            print("podaj jeszcze raz dwie liczby\n")
+            continue
+        if int(pozycja_x) and int(pozycja_y) >= 0 :
+            break
+    
+
     # sprawdzamy tutaj czy nasze namiary sa takie same jak losowe gdzie ukryty zostal statek
+    
     if statek_pozycja_x == pozycja_x and statek_pozycja_y == pozycja_y:
         print("Gratulacje! zatopiles moj statek ")
         break
@@ -65,4 +82,5 @@ while tura < 4:
 
         if tura == 4:
             print("koniec strzalów, Game Over")
+            
 input("\n\nAby zakonczyc program, nacisnij klawisz Enter.")
