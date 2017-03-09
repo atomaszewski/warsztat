@@ -1,0 +1,8 @@
+#local ignor bak
+*.bak
+*.tmp
+*.out
+
+#local ingore directory tmp
+tmp/*
+
